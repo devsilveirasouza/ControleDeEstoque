@@ -10,7 +10,7 @@ namespace ControleDeEstoque.Controllers {
 	public class UserController {
 		private readonly UserDAL userDAL;
 
-			public UserController() {
+		public UserController() {
 			userDAL = new UserDAL();
 		}
 
@@ -22,6 +22,16 @@ namespace ControleDeEstoque.Controllers {
 			userDAL.AddUser(user);
 		}
 
-		// Métodos Updater e DeleteUser podem ser adicionados de maneira similar
+		public void UpdateUser(User user) {
+			userDAL.UpdateUser(user);
+		}
+
+		public void DeleteUser(int userId) {
+			userDAL.DeleteUser(userId);
+		}
+
+		public User GetUserById(int userId) {
+			return userDAL.GetUserById(userId);
+		}
 	}
 }
